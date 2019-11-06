@@ -30,6 +30,8 @@
             '/Qspectre',
             '/MP',     # Enable multi process build.
             '/EHsc',   # Catch C++ exceptions only, extern C functions never throw a C++ exception.
+            '/utf-8',  # Sean
+            '/Zm2000', # Sean
             '/w14834', # [[nodiscard]]
             '/w15038', # wrong initialization order
             '/w14265', # class has virtual functions, but destructor is not virtual
