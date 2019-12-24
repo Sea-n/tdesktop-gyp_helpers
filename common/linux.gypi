@@ -23,15 +23,15 @@
           '-Wno-missing-field-initializers',
           '-Wno-sign-compare',
           '-Wno-attributes',
+          '-Wno-parentheses', # happens in foreign headers
+          '-Wno-stringop-overflow', # false positives
           '-Wno-error=class-memaccess',
-          '-Wno-error=parentheses',
         ],
         'linux_path_ffmpeg%': '/usr/local',
         'linux_path_openal%': '/usr/local',
         'linux_path_va%': '/usr/local',
         'linux_path_vdpau%': '/usr/local',
         'linux_path_breakpad%': '/usr/local',
-        'linux_path_opus_include%': '<(libs_loc)/opus/include',
         'linux_path_range%': '/usr/local',
       },
       'include_dirs': [
@@ -39,7 +39,6 @@
         '<(linux_path_ffmpeg)/include',
         '<(linux_path_openal)/include',
         '<(linux_path_breakpad)/include/breakpad',
-        '<(linux_path_opus_include)',
         '<(linux_path_range)/include',
       ],
       'library_dirs': [
@@ -69,7 +68,7 @@
               'sources': [ '__Wrong_Special_Build_Target_<(special_build_target)_' ],
             }],
           ],
-        }], [ '"<!(uname -p)" == "x86_64"', {
+        }], [ '"<!(uname -m)" == "x86_64"', {
           # 32 bit version can't be linked with debug info or LTO,
           # virtual memory exhausted :(
           'cflags_c': [ '-g' ],

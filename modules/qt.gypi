@@ -93,6 +93,7 @@
             'qt_libs': [
               'qxcb',
               'Qt5XcbQpa',
+              'Qt5LinuxAccessibilitySupport',
               'Qt5ServiceSupport',
               'Qt5EdidSupport',
               'qconnmanbearer',
